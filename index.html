@@ -4,54 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HJ BV Dashboard</title>
-  <style>
-    body { font-family: sans-serif; margin:0; padding:0; display:flex; flex-direction:column; height:100vh; }
-    header { background:#004080; color:#fff; padding:1rem; text-align:center; }
-    #login, #dashboard { margin:auto; width:90%; max-width:400px; }
-    input, button { width:100%; padding:0.75rem; margin-top:0.5rem; font-size:1rem; }
-    .message { border:1px solid #ddd; padding:0.75rem; margin-top:1rem; border-radius:4px; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>HJ BV</h1></header>
-  <div id="login">
-    <h2>Inloggen</h2>
-    <input id="user" placeholder="Gebruikersnaam" value="hendrik@hj‑bv.com" />
-    <input id="pass" type="password" placeholder="Wachtwoord" value="HJBV2025!" />
-    <button onclick="doLogin()">Inloggen</button>
-    <p id="loginError" style="color:red;"></p>
-  </div>
-  <div id="dashboard" style="display:none;">
-    <h2>Welkom, Hendrik!</h2>
-    <div>
-      <textarea id="prompt" rows="3" placeholder="Geef Nova een opdracht…"></textarea>
-      <button onclick="sendPrompt()">Stuur opdracht</button>
-    </div>
-    <div id="chat"></div>
-  </div>
-  <script>
-    const LOGIN_OK = { user:'hendrik@hj‑bv.com', pass:'HJBV2025!' };
-    function doLogin(){
-      const u=document.getElementById('user').value, p=document.getElementById('pass').value;
-      if(u===LOGIN_OK.user && p===LOGIN_OK.pass){
-        document.getElementById('login').style.display='none';
-        document.getElementById('dashboard').style.display='block';
-      } else {
-        document.getElementById('loginError').innerText='Onjuiste gegevens';
-      }
-    }
-    function sendPrompt(){
-      const txt=document.getElementById('prompt').value; if(!txt) return;
-      const chat=document.getElementById('chat');
-      const elUser=document.createElement('div'); elUser.className='message'; elUser.innerText='Jij: '+txt;
-      chat.appendChild(elUser);
-      const elBot=document.createElement('div'); elBot.className='message'; elBot.innerText='Nova denkt…';
-      chat.appendChild(elBot);
-      document.getElementById('prompt').value='';
-      // **Dummy‑response** ter demo:
-      setTimeout(()=>{ elBot.innerText='Nova: Hier is een briljant plan om snel geld te verdienen gebaseerd op "'+txt+'".'; }, 1200);
-      chat.scrollTop = chat.scrollHeight;
-    }
-  </script>
+  <header><h1>HJ BV Vergadertafel</h1></header>
+  <main id="table">
+    <div class="ai-seat nova">Nova<br><span>Strategie</span></div>
+    <div class="ai-seat lex">Lex<br><span>Juridisch</span></div>
+    <div class="ai-seat milo">Milo<br><span>Marketing</span></div>
+    <div class="ai-seat rosa">Rosa<br><span>Onderzoek</span></div>
+    <div class="ai-seat finn">Finn<br><span>Financiën</span></div>
+    <div class="ai-seat kai">Kai<br><span>Tech</span></div>
+  </main>
+  <section id="input-area">
+    <textarea id="prompt" placeholder="Geef een opdracht aan je team…"></textarea>
+    <button onclick="sendPrompt()">Stuur</button>
+  </section>
+  <section id="chat"></section>
+  <script src="script.js"></script>
 </body>
 </html>
