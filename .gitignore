@@ -1,0 +1,13 @@
+# API key & configs
+.env
+
+# Node dependencies
+node_modules/
+
+# Build output
+.next/
+dist/
+
+# OS-bestanden
+.DS_Store
+Thumbs.db
