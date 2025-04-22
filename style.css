@@ -1,0 +1,62 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  background: #003366;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+#table {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: #e0e0e0;
+}
+.ai-seat {
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 120px;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-weight: bold;
+}
+.ai-seat span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+#input-area {
+  padding: 1rem;
+  background: #fff;
+  display: flex;
+  gap: 1rem;
+}
+textarea {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#chat {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
