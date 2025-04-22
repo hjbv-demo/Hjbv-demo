@@ -1,0 +1,37 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  background: #004080;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+#login,
+#dashboard {
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+}
+input,
+button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.message {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+.error {
+  color: red;
+  margin-top: 1rem;
+}
